@@ -60,4 +60,39 @@ while guess != number:
     print("it is smaller")
   elif guess > number:
     print("it is bigger")
+#if是条件控制，while是循环控制
 
+print(" ")
+n = 100
+sum = 0
+counter = 1
+while counter <= n:
+  sum = sum + counter
+  counter += 1
+print("1 到 %d 之和为 %d"%(n,sum))
+
+print(" ")
+#while```else:如果while后面的条件语句为fales，则执行else的语句块。
+count = 0
+while count < 5:
+  print(count,"小于5")
+  count = count + 1
+else:
+  print(count, "大于或等于5")
+
+print(" ")
+#while的简单语句组写法：
+flag = 0
+while(flag):print("hello!")
+print("goodbye!")
+#如果将flag改为1，实际执行的就是while flag==1：print（），这使得while的条件表达式永远不为false，达到无限循环的效果。
+
+print("")
+#for循环可以遍历任何可迭代对象，如一个列表或者一个字符串：常见格式如下：
+#for <variable> in <sequence>:
+# <statements>
+#else:
+# <statements>
+sites = ["baidu","google","runoob","taobao"]
+for site in sites:
+  print(site)
