@@ -49,3 +49,15 @@ print("goodbye!")
 
 print(" ")
 print("hello!hello! i m python!")
+number = 7
+guess = 6
+print("let us guess!（answer is 7)")
+while guess != number:
+  guess = int(input("input ur num plz:"))
+  if guess == number:
+    print("u r right!")
+  elif guess < number:
+    print("it is smaller")
+  elif guess > number:
+    print("it is bigger")
+
