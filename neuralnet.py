@@ -9,8 +9,6 @@ class NeuralNetwork:
 
         self.lr = learningrate
 
-        pass
-    def trian():
         self.wih = (numpy.random.rand(self.hnodes, self.inodes) - 0.5)
         self.who = (numpy,random.rand(self.onodes, self.hnodes) - 0.5)
         # wih = weights input to hidden layer
@@ -27,7 +25,11 @@ class NeuralNetwork:
         size：输出的形状。如果给定一个整数，则返回一个具有该长度的一维数组；如果给定一个元组，则返回一个具有指定维度的数组。'''
         pass
 
+    def trian():
+        pass
+
     def query():
+        hidden_inputs = numpy.dot(self.wih, inputs)
         pass
 
 input_nodes = 3
