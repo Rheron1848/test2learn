@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}用户资料 - {{ user.name }}{% endblock %}
+
+{% block content %}
+<h1>👤 用户资料</h1>
+
+<div class="user-card">
+    <h2>{{ user.name }}</h2>
+    <p><strong>用户 ID:</strong> {{ user_id }}</p>
+    <p><strong>邮箱:</strong> {{ user.email }}</p>
+    <p><strong>年龄:</strong> {{ user.age }} 岁</p>
+</div>
+
+<p><a href="{{ url_for('home') }}">返回首页</a></p>
+
+<h2>💡 动态路由解析</h2>
+<p>这个页面展示了 Flask 的动态路由功能：</p>
+
+<h3>1. 路由参数</h3>
+<pre><code>@app.route('/user/&lt;int:user_id&gt;')
+def user_profile(user_id):
+    # user_id 是从URL中提取的整数参数</code></pre>
+
+<h3>2. 参数类型</h3>
+<ul>
+    <li><code>&lt;int:user_id&gt;</code> - 整数类型参数</li>
+    <li><code>&lt;string:name&gt;</code> - 字符串类型参数（默认）</li>
+    <li><code>&lt;float:price&gt;</code> - 浮点数类型参数</li>
+    <li><code>&lt;path:filepath&gt;</code> - 路径类型参数（包含斜杠）</li>
+</ul>
+
+<h3>3. URL 生成</h3>
+<pre><code># 在模板中生成URL
+url_for('user_profile', user_id=1)
+# 生成: /user/1</code></pre>
+
+<h3>4. 错误处理</h3>
+<p>如果访问不存在的用户ID，应用会返回 404 错误。试试访问 <a href="{{ url_for('user_profile', user_id=999) }}">/user/999</a></p>
+
+<h2>🔗 其他用户</h2>
+<p>
+    <a href="{{ url_for('user_profile', user_id=1) }}">用户 1</a> | 
+    <a href="{{ url_for('user_profile', user_id=2) }}">用户 2</a> | 
+    <a href="{{ url_for('user_profile', user_id=3) }}">用户 3</a>
+</p>
+{% endblock %}

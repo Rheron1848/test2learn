@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}提交成功 - Flask 学习示例{% endblock %}
+
+{% block content %}
+<h1>✅ 提交成功！</h1>
+
+<div class="user-card" style="background-color: #d4edda; border-color: #c3e6cb;">
+    <h2>感谢您的留言，{{ name }}！</h2>
+    <p>我们已经收到了您的消息，会尽快回复您。</p>
+</div>
+
+<p><a href="{{ url_for('contact') }}">返回联系页面</a> | <a href="{{ url_for('home') }}">返回首页</a></p>
+
+<h2>💡 这里发生了什么？</h2>
+<p>当你提交表单时，以下过程发生了：</p>
+
+<ol>
+    <li><strong>表单提交</strong>: 浏览器发送 POST 请求到 <code>/contact</code></li>
+    <li><strong>数据处理</strong>: Flask 应用接收表单数据</li>
+    <li><strong>数据提取</strong>: 使用 <code>request.form['name']</code> 获取用户输入的姓名</li>
+    <li><strong>模板渲染</strong>: 渲染成功页面并传递姓名变量</li>
+    <li><strong>响应返回</strong>: 将渲染后的 HTML 发送回浏览器</li>
+</ol>
+
+<h3>🔍 关键代码</h3>
+<pre><code># 在视图函数中
+name = request.form['name']
+return render_template('contact_success.html', name=name)
+
+# 在模板中
+感谢您的留言，{{ name }}！</code></pre>
+
+<p>这演示了 Flask 如何在视图函数和模板之间传递数据。</p>
+{% endblock %}

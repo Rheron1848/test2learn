@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}关于 - Flask 学习示例{% endblock %}
+
+{% block content %}
+<h1>关于这个项目</h1>
+
+<p>这个 Flask 示例项目是为了帮助初学者理解 Flask Web 框架的基本概念而创建的。</p>
+
+<h2>🚀 项目特性</h2>
+<ul>
+    <li>简单易懂的代码结构</li>
+    <li>包含常用的 Flask 功能演示</li>
+    <li>响应式的 HTML 模板</li>
+    <li>表单处理示例</li>
+    <li>REST API 示例</li>
+</ul>
+
+<h2>📁 项目结构</h2>
+<pre>
+flask_demo/
+├── app.py              # 主应用文件
+└── templates/          # HTML 模板目录
+    ├── base.html       # 基础模板
+    ├── index.html      # 首页模板
+    ├── about.html      # 关于页面模板
+    ├── contact.html    # 联系表单模板
+    ├── contact_success.html # 表单提交成功页面
+    └── user_profile.html    # 用户资料页面模板
+</pre>
+
+<h2>🛠️ 使用的技术</h2>
+<ul>
+    <li><strong>Flask</strong> - Python Web 框架</li>
+    <li><strong>Jinja2</strong> - 模板引擎</li>
+    <li><strong>HTML/CSS</strong> - 前端样式</li>
+</ul>
+
+<h2>📖 学习资源</h2>
+<p>推荐的 Flask 学习资源：</p>
+<ul>
+    <li>Flask 官方文档: https://flask.palletsprojects.com/</li>
+    <li>Flask Mega-Tutorial: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world</li>
+    <li>Python Flask 快速入门教程</li>
+</ul>
+{% endblock %}

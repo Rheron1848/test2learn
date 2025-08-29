@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}联系我们 - Flask 学习示例{% endblock %}
+
+{% block content %}
+<h1>联系我们</h1>
+
+<p>这是一个表单处理的示例页面。你可以填写下面的表单来学习 Flask 如何处理 POST 请求。</p>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">邮箱:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">留言:</label>
+        <textarea id="message" name="message" rows="4" required placeholder="请输入您的留言..."></textarea>
+    </div>
+    
+    <button type="submit">提交</button>
+</form>
+
+<h2>💡 代码解析</h2>
+<p>这个页面展示了以下 Flask 概念：</p>
+
+<h3>1. HTTP 方法处理</h3>
+<pre><code>@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        # 处理表单提交
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        return render_template('contact_success.html', name=name)
+    # 显示表单
+    return render_template('contact.html')</code></pre>
+
+<h3>2. 表单数据获取</h3>
+<ul>
+    <li><code>request.form['字段名']</code> - 获取表单数据</li>
+    <li><code>request.method</code> - 检查请求方法</li>
+    <li><code>render_template()</code> - 渲染模板并传递数据</li>
+</ul>
+
+<h3>3. 模板变量</h3>
+<p>提交表单后，用户名会传递给成功页面模板。</p>
+{% endblock %}

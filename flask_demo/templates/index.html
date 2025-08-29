@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Flask 学习示例 - 首页{% endblock %}
+
+{% block content %}
+<h1>欢迎来到 Flask 学习示例！</h1>
+
+<p>这是一个简单的 Flask Web 应用程序，旨在帮助你学习 Flask 的基础知识。</p>
+
+<h2>🎯 学习要点</h2>
+<ul>
+    <li><strong>路由 (Routes)</strong>: Flask 使用装饰器定义URL路径和对应的函数</li>
+    <li><strong>模板 (Templates)</strong>: 使用 Jinja2 模板引擎渲染动态HTML页面</li>
+    <li><strong>表单处理</strong>: 处理 GET 和 POST 请求</li>
+    <li><strong>URL 参数</strong>: 从URL中获取动态参数</li>
+    <li><strong>JSON API</strong>: 返回JSON数据作为API响应</li>
+</ul>
+
+<h2>🔗 示例页面</h2>
+<div class="user-card">
+    <h3>基础页面</h3>
+    <p><a href="{{ url_for('about') }}">关于页面</a> - 静态页面示例</p>
+    <p><a href="{{ url_for('contact') }}">联系我们</a> - 表单处理示例</p>
+</div>
+
+<div class="user-card">
+    <h3>动态路由</h3>
+    <p><a href="{{ url_for('user_profile', user_id=1) }}">用户 1 资料</a></p>
+    <p><a href="{{ url_for('user_profile', user_id=2) }}">用户 2 资料</a></p>
+    <p><a href="{{ url_for('user_profile', user_id=3) }}">用户 3 资料</a></p>
+</div>
+
+<div class="user-card">
+    <h3>API 示例</h3>
+    <p><a href="{{ url_for('api_users') }}">用户列表 API</a> - 返回JSON数据</p>
+</div>
+
+<h2>📚 Flask 基础概念</h2>
+<p><strong>Flask</strong> 是一个轻量级的 Python Web 框架，它提供了构建 Web 应用程序的基本工具和功能。</p>
+
+<h3>核心组件：</h3>
+<ul>
+    <li><strong>应用实例</strong>: <code>app = Flask(__name__)</code></li>
+    <li><strong>路由装饰器</strong>: <code>@app.route('/path')</code></li>
+    <li><strong>视图函数</strong>: 处理请求并返回响应的函数</li>
+    <li><strong>模板</strong>: HTML文件，可以包含动态内容</li>
+</ul>
+{% endblock %}
