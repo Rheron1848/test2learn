@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Read(c:\\projects\\test2learn\\flask_demo/**)",
+      "Read(c:\\projects\\test2learn\\flask_demo\\templates/**)"
     ],
     "deny": [],
     "ask": []

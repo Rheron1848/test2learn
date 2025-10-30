@@ -1,3 +1,17 @@
+<!---\
+
+● base.html 是一个基础模板文件，被其他模板文件通过 {% extends 
+  "base.html" %} 语句继承调用。当前有5个模板文件继承自它：
+
+  - user_profile.html
+  - index.html
+  - contact_success.html
+  - contact.html
+  - about.html
+
+  这些子模板会继承 base.html 的结构，并通过 {% block %}
+  语法重写特定内容区域。
+-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
